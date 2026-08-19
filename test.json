@@ -1,0 +1,4 @@
+MarkUp = ({Input
+}.toLowerCase() === "pws" ? 0: ({Input
+}.toLowerCase() ===  "no-pws"  ? {associate.finalCTC
+} * 0.02) : 0)));

@@ -1,0 +1,806 @@
+[
+  {
+    "clientName": "SUSTRO SPECIALITY OILS PRIVATE LIMITED",
+    "excelRow": 2,
+    "results": []
+  },
+  {
+    "clientName": "TW Global Capability Centre Private Limited",
+    "excelRow": 3,
+    "results": []
+  },
+  {
+    "clientName": "NADATHUR ESTATES PRIVATE LIMITED",
+    "excelRow": 4,
+    "results": [
+      {
+        "service": "perm",
+        "terms": null,
+        "script": "({BillableCTC} <= 1000000 ? (MarkUp =0.0833* {BillableCTC},ExecutedServiceTerms = \"8.33%\") : (MarkUp = 0.10* {BillableCTC},ExecutedServiceTerms = \"10%\")) ; ",
+        "replacementPeriod": null,
+        "output": {
+          "MarkUp": 83300,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "VISIONAIRE GLOBAL ENGINEERING PRIVATE LIMITED",
+    "excelRow": 5,
+    "results": [
+      {
+        "service": "perm",
+        "terms": null,
+        "script": "({BillableCTC} <= 4000000 ? (MarkUp =0.0833* {BillableCTC},ExecutedServiceTerms = \"8.33%\") : (MarkUp = 0.10* {BillableCTC},ExecutedServiceTerms = \"10%\")) ; ",
+        "replacementPeriod": null,
+        "output": {
+          "MarkUp": 83300,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "NORDEX GLOBAL SHARED SERVICES PRIVATE LIMITED",
+    "excelRow": 6,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 5.7% of Annual Fixed CTC ",
+        "script": "MarkUp = {BillableCTC} * 0.057;ExecutedServiceTerms = \"5.7%\"; ReplacementPeriod = 60",
+        "replacementPeriod": "Replacement Period is 60 Days",
+        "output": {
+          "MarkUp": 57000,
+          "ReplacementPeriod": 60,
+          "ExecutedServiceTerms": "5.7%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "TAMARA LEISURE EXPERIENCES PRIVATE LIMITED",
+    "excelRow": 7,
+    "results": [
+      {
+        "service": "perm",
+        "terms": null,
+        "script": "({BillableCTC} <= 3500000 ? (MarkUp =0.0833* {BillableCTC},ExecutedServiceTerms = \"8.33%\") : (MarkUp = 0.10* {BillableCTC},ExecutedServiceTerms = \"10%\")) ; ",
+        "replacementPeriod": null,
+        "output": {
+          "MarkUp": 83300,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "RECORDED MUSIC PERFORMANCE LIMITED",
+    "excelRow": 8,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual Gross Salary for Applicant in case the Annual Gross Salary \"Upto Rs.10,00,000\", 10% in case Annual Gross Salary is between \"Rs.10,00,001 to Rs.40,00,000\", 12.5% of Annual Gross Salary for more than \"Rs.40,00,000\"",
+        "script": "{BillableCTC} <= 1000000 ? (MarkUp ={BillableCTC} * 0.0833,ExecutedServiceTerms = \"8.33%\") : {BillableCTC} >= 1000001 && {BillableCTC} <= 4000000 ? (MarkUp ={BillableCTC} * 0.10,ExecutedServiceTerms = \"10%\") : (MarkUp = {BillableCTC} * 0.125,ExecutedServiceTerms = \"12.5%\");ReplacementPeriod = {BillableCTC} <= 1000000 ?60 : 90  ",
+        "replacementPeriod": "Replacement Period is 60 Days in case the Annual CTC is \"Upto Rs.10,00,000\", 90 Days if  the Annucal CTC is more than \"Rs.10,00,000\"",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 60,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "Cameron Manufacturing (India) Private Limited",
+    "excelRow": 9,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Grade 7 & Below\r\n\r\nModel X : \r\nMarkup amount is Rs.11,587/- Per Applicant if applicant is “Pre-identified, Interviewed & Selected Candidate”\r\n\r\nModel Y :\r\nMarkup amount is Rs 40,556 Per Applicant if applicant is “Referral Applicant” \r\nMarkup amount is Rs 40,556 Per Applicant if applicant is “Re-Hire Applicant”\r\n\r\nModel Z : \r\nMarkup amount is Rs.52,143/- Per Applicant if applicant is “Sourced by On-site/RPO Team”\r\nMarkup amount is Rs. 46,350/- Per Applicant if applicant is “Sourced by Manpower Team”\r\n\r\nGrade 8 & Above\r\n\r\nModel X : \r\nMarkup amount is Rs.19,312/- Per Applicant if applicant is “Pre-identified, Interviewed & Selected Candidate”\r\n\r\nModel Y :\r\nMarkup amount is Rs 67,593 Per Applicant if applicant is “Referral Applicant” \r\nMarkup amount is Rs 67,593 Per Applicant if applicant is “Re-Hire Applicant”\r\n\r\nModel Z : \r\nMarkup amount is Rs.86,905/- Per Applicant if applicant is “Sourced by On-site/RPO Team”\r\nMarkup amount is Rs.77,249/- Per Applicant if applicant is “Sourced by Manpower Team”",
+        "script": " ( \r\n  ({Input}.toLowerCase() === \"belowgrade7&piisc\")\r\n    ? (MarkUp =11587,ExecutedServiceTerms = \"11587\")\r\n    : ({Input}.toLowerCase() === \"belowgrade7&referral\" || {Input}.toLowerCase() === \"belowgrade7&rehire\")\r\n    ? (MarkUp =40556,ExecutedServiceTerms = \"40556\")\r\n    : ({Input}.toLowerCase() === \"belowgrade7&rpo\")\r\n    ? (MarkUp =52143,ExecutedServiceTerms = \"52143\")\r\n    : ({Input}.toLowerCase() === \"belowgrade7&mpg\")\r\n    ? (MarkUp =46350,ExecutedServiceTerms = \"46350\")\r\n    : ({Input}.toLowerCase() === \"abovegrade8&piisc\")\r\n    ? (MarkUp =19312,ExecutedServiceTerms = \"19312\")\r\n    : ({Input}.toLowerCase() === \"abovegrade8&referral\" || {Input}.toLowerCase() === \"abovegrade8&rehire\")\r\n    ? (MarkUp =67593,ExecutedServiceTerms = \"67593\")\r\n    : ({Input}.toLowerCase() === \"abovegrade8&rpo\")\r\n    ? (MarkUp =86905,ExecutedServiceTerms = \"86905\")\r\n    : ({Input}.toLowerCase() === \"abovegrade8&mpg\")\r\n    ? (MarkUp =77249,ExecutedServiceTerms = \"77249\")\r\n    : 0\r\n); ReplacementPeriod = 90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "belowgrade7&piisc": {
+            "MarkUp": 11587,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "11587"
+          },
+          "belowgrade7&referral": {
+            "MarkUp": 40556,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "40556"
+          },
+          "belowgrade7&rehire": {
+            "MarkUp": 40556,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "40556"
+          },
+          "belowgrade7&rpo": {
+            "MarkUp": 52143,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "52143"
+          },
+          "belowgrade7&mpg": {
+            "MarkUp": 46350,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "46350"
+          },
+          "abovegrade8&piisc": {
+            "MarkUp": 19312,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "19312"
+          },
+          "abovegrade8&referral": {
+            "MarkUp": 67593,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "67593"
+          },
+          "abovegrade8&rehire": {
+            "MarkUp": 67593,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "67593"
+          },
+          "abovegrade8&rpo": {
+            "MarkUp": 86905,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "86905"
+          },
+          "abovegrade8&mpg": {
+            "MarkUp": 77249,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "77249"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "MASCOT INTERNATIONAL PRIVATE LIMITED",
+    "excelRow": 10,
+    "results": []
+  },
+  {
+    "clientName": "HITACHI VANTARA INDIA PRIVATE LIMITED",
+    "excelRow": 11,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 6.5% of Annual Offered CTC [Refer : Monthly Management Fee]",
+        "script": "MarkUp = {BillableCTC} * 0.065;ExecutedServiceTerms = \"6.5%\"; ReplacementPeriod =  90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "MarkUp": 65000,
+          "ReplacementPeriod": 90,
+          "ExecutedServiceTerms": "6.5%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "HITACHI DIGITAL GLOBAL INDIA PRIVATE LIMITED",
+    "excelRow": 12,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is Rs. 65,000 per month, \"1 recruiter\", for recruiter on demand",
+        "script": "//Ignore",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": null
+      }
+    ]
+  },
+  {
+    "clientName": "HITACHI DIGITAL SERVICES INDIA PRIVATE LIMITED",
+    "excelRow": 13,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is Rs.1,00,000 Per Applicant [Refer : Monthly Management Fee]                     //S No\tTarget Hires (Per Month)\tFinding Fee (INR) – Per Joiner\r\n1)  \t1 to 5\t-> 1 Lakh – Per Joiner\r\n2)  \t6 to 10\t-> 1.5 Lakh – Per Joiner\r\n3)  \t11 to 15   -> \t2 Lakhs – Per Joiner\r\n4)   \t16 & above   -> \t2.5 Lakhs – Per Joiner",
+        "script": "(\r\n  {Input}.toLowerCase() === \"1-5hires\"\r\n    ? (MarkUp = 100000,ExecutedServiceTerms = \"100000\")\r\n  : {Input}.toLowerCase() === \"6-10hires\"\r\n    ? (MarkUp =150000,ExecutedServiceTerms = \"150000\")\r\n : {Input}.toLowerCase() === \"11-15hires\"\r\n    ? (MarkUp =200000,ExecutedServiceTerms = \"200000\")\r\n  : {Input}.toLowerCase() === \"16&ahires\"\r\n    ? (MarkUp =250000,ExecutedServiceTerms = \"250000\")\r\n  : 0\r\n); ReplacementPeriod = 90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "1-5hires": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "100000"
+          },
+          "6-10hires": {
+            "MarkUp": 150000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "150000"
+          },
+          "11-15hires": {
+            "MarkUp": 200000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "200000"
+          },
+          "16&ahires": {
+            "MarkUp": 250000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "250000"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "Trimont Services India Private Limited",
+    "excelRow": 14,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual Gross Salary for Applicant in case the Annual Gross Salary is \"Upto Rs.10,00,000\", 10% in case Annual Gross Salary is between \"Rs.10,00,001 to Rs.20,00,000\", 12.50% in case Annual Gross Salary is between \"Rs.20,00,001 to Rs.35,00,000\", 18% of Annual Gross Salary for more than \"Rs.35,00,000\" [Refer : Monthly Management Fee]",
+        "script": "({BillableCTC} <= 1000000 ?  (MarkUp = {BillableCTC} * 0.0833,ExecutedServiceTerms = \"8.33%\") : ({BillableCTC} >= 1000001 && {BillableCTC} <= 2000000 ?  (MarkUp ={BillableCTC} * 0.10,ExecutedServiceTerms = \"10%\") : ({BillableCTC} >= 2000001 && {BillableCTC} <= 3500000 ?  (MarkUp ={BillableCTC} * 0.125,ExecutedServiceTerms = \"12.5%\") :  (MarkUp ={BillableCTC} * 0.18,ExecutedServiceTerms = \"18%\")))); ReplacementPeriod =  60",
+        "replacementPeriod": "Replacement Period is 60 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 60,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "EQUINIX INDIA PRIVATE LIMITED",
+    "excelRow": 15,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Not Applicable",
+        "script": "NA",
+        "replacementPeriod": "Not Applicable",
+        "output": "Error: NA is not defined"
+      }
+    ]
+  },
+  {
+    "clientName": "BALLUFF AUTOMATION INDIA PRIVATE LIMITED",
+    "excelRow": 16,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 8.33% of Annual Offered CTC",
+        "script": "MarkUp = {BillableCTC} * 0.0833; ExecutedServiceTerms = \"8.33%\"; ReplacementPeriod = 90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 90,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "TRIPGAIN TRAVEL & EXPENSE MANAGEMENT SOLUTIONS PRIVATE LIMITED",
+    "excelRow": 17,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 6.75% of Annual Fixed CTC                      // If candidate billable ctc is “Upto Rs. 20,00,000”, mark up is 8.33% of billable ctc, if billable ctc is more than “Rs. 20,00,000” markup is 10% of billable ctc [replacement period as mentioned in below snapshot]",
+        "script": "({BillableCTC} <= 2000000 ? (MarkUp =0.0833* {BillableCTC},ExecutedServiceTerms = \"8.33%\") : (MarkUp = 0.10* {BillableCTC},ExecutedServiceTerms = \"10%\")) ; ReplacementPeriod =  90 ",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 90,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "EXO EDGE ADVANTAGE INDIA PRIVATE LIMITED",
+    "excelRow": 18,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual Gross Salary for Applicant in case the Annual Gross Salary is \"Upto Rs.30,00,000\", 10% of Annual Gross Salary for more than \"Rs.30,00,000\"",
+        "script": "({BillableCTC} <= 3000000 ? (MarkUp ={BillableCTC} * 0.0833,ExecutedServiceTerms = \"8.33%\") : (MarkUp ={BillableCTC} * 0.10,ExecutedServiceTerms = \"10%\")); ReplacementPeriod =  90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 90,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "Basic Enterprises Private Limited",
+    "excelRow": 19,
+    "results": []
+  },
+  {
+    "clientName": "DORF-KETAL CHEMICALS INDIA LIMITED",
+    "excelRow": 20,
+    "results": []
+  },
+  {
+    "clientName": "GENERAL ENERGY MANAGEMENT SYSTEMS PRIVATE LIMITED",
+    "excelRow": 21,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 8.33% of Annual Gross Salary ",
+        "script": "MarkUp = {BillableCTC} * 0.0833;ExecutedServiceTerms = \"8.33%\"; ReplacementPeriod = 120",
+        "replacementPeriod": "Replacement Period is 120 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 120,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "SMART GRID ANALYTICS PRIVATE LIMITED",
+    "excelRow": 22,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual CTC for Applicant experience is \"Upto 4 Years\", 10% in case Applicant experience is \"More than 4.1 Years\"",
+        "script": "({Input}.toLowerCase() === \"0-1y\" || {Input}.toLowerCase() === \"1.1-2y\" || {Input}.toLowerCase() === \"2.1-3y\" || {Input}.toLowerCase() === \"3.1-4\") ? (MarkUp ={BillableCTC} * 0.0833,ExecutedServiceTerms = \"8.33%\") : ({Input}.toLowerCase() === \"4.1-5y\" || {Input}.toLowerCase() === \"5.1-6y\" || {Input}.toLowerCase() === \"6.1-7y\" || {Input}.toLowerCase() === \"7.1-8y\" || {Input}.toLowerCase() === \"8.1-9y\" || {Input}.toLowerCase() === \"9.1-10y\" || {Input}.toLowerCase() === \"10.1-11y\" || {Input}.toLowerCase() === \"11.1-12y\" || {Input}.toLowerCase() === \"12.1-13y\" || {Input}.toLowerCase() === \"13.1-14y\" || {Input}.toLowerCase() === \"14.1-15y\" || {Input}.toLowerCase() === \"15.1-16y\" || {Input}.toLowerCase() === \"16.1-17y\" || {Input}.toLowerCase() === \"17.1-18y\" || {Input}.toLowerCase() === \"18.1-19y\" || {Input}.toLowerCase() === \"19.1-20y\" || {Input}.toLowerCase() === \">20y\") ? (MarkUp ={BillableCTC} * 0.10,ExecutedServiceTerms = \"10%\") : 0  ; ReplacementPeriod =  60",
+        "replacementPeriod": "Replacement Period is 60 Days",
+        "output": {
+          "0-1y": {
+            "MarkUp": 83300,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "8.33%"
+          },
+          "1.1-2y": {
+            "MarkUp": 83300,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "8.33%"
+          },
+          "2.1-3y": {
+            "MarkUp": 83300,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "8.33%"
+          },
+          "4.1-5y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "5.1-6y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "6.1-7y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "7.1-8y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "8.1-9y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "9.1-10y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "10.1-11y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "11.1-12y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "12.1-13y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "13.1-14y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "14.1-15y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "15.1-16y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "16.1-17y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "17.1-18y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "18.1-19y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          },
+          "19.1-20y": {
+            "MarkUp": 100000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "10%"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "VISTONY INDIA PRIVATE LIMITED",
+    "excelRow": 23,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 8.33% of Annual CTC",
+        "script": "MarkUp = {BillableCTC} * 0.0833; ExecutedServiceTerms = \"8.33%\";ReplacementPeriod =  90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 90,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "ALSINA FORMWORK (INDIA) PRIVATE LIMITED",
+    "excelRow": 24,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual Fixed CTC for Applicant in case the Annual Fixed CTC is \"Upto Rs.15,00,000\", 8.33% in case Annual Fixed CTC is between \"Rs.15,00,001 to Rs. 30,00,000\", 10% if  the Annucal Fixed CTC is more than \"Rs.30,00,000\"",
+        "script": "({BillableCTC} <= 1500000 ? (MarkUp ={BillableCTC} * 8.33 / 100 ,ExecutedServiceTerms = \"8.33%\")  : ({BillableCTC} >= 1500001 && {BillableCTC} <= 3000000 ? (MarkUp = {BillableCTC} * 8.33 / 100,ExecutedServiceTerms = \"8.33%\")  : (MarkUp = {BillableCTC} * 10 / 100,ExecutedServiceTerms = \"10%\"))); ReplacementPeriod =  {BillableCTC} <= 1500000 ? 60  : 90 ",
+        "replacementPeriod": "Replacement Period is 60 Days in case the Annual Fixed CTC is \"Upto Rs.15,00,000\", 90 Days if the Annucal Fixed CTC is more than \"Rs.15,00,000\" ",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 60,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "NTS TECHNOLOGY SERVICES PRIVATE LIMITED",
+    "excelRow": 25,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual CTC for Applicant in case the Annual CTC is \"Upto Rs.40,00,000\", 12.5% of Annual Offered CTC for more than \"Rs.40,00,000\"",
+        "script": "({BillableCTC} <= 4000000 ? (MarkUp ={BillableCTC} * 0.0833,ExecutedServiceTerms = \"8.33%\") :  (MarkUp ={BillableCTC} * 0.125,ExecutedServiceTerms = \"12.5%\")); ReplacementPeriod =  90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 90,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "Berkadia Services India Private Limited",
+    "excelRow": 26,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual Fixed CTC for role \"Upto Senior Analyst/Senior Credit Operations\", 12% in case role is of \" \"PE/TL to AVP\", 15% if the role is \"VP & Above\" for Enabling & Oprations and Information Technology ",
+        "script": "({Input}.toLowerCase() === 'sa/sco' ? (MarkUp ={BillableCTC} * 0.0833,ExecutedServiceTerms = \"8.33%\") : ({Input}.toLowerCase() === 'pe' || {Input}.toLowerCase() === 'tl' || {Input}.toLowerCase() === 'avp') ? (MarkUp = {BillableCTC} * 0.12,ExecutedServiceTerms = \"12%\") : ({Input}.toLowerCase() === 'vp') ? (MarkUp = {BillableCTC} * 0.15,ExecutedServiceTerms = \"15%\") : 0); ReplacementPeriod = 90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "sa/sco": {
+            "MarkUp": 83300,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "8.33%"
+          },
+          "pe": {
+            "MarkUp": 120000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "12%"
+          },
+          "tl": {
+            "MarkUp": 120000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "12%"
+          },
+          "avp": {
+            "MarkUp": 120000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "12%"
+          },
+          "vp": {
+            "MarkUp": 150000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "15%"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "MIDREX TECHNOLOGIES INDIA PRIVATE LIMITED",
+    "excelRow": 27,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 9% of Annual Gross Salary",
+        "script": "MarkUp = {BillableCTC} * 0.09; ExecutedServiceTerms = \"9%\"; ReplacementPeriod =  30",
+        "replacementPeriod": "Replacement Period is 30 Days",
+        "output": {
+          "MarkUp": 90000,
+          "ReplacementPeriod": 30,
+          "ExecutedServiceTerms": "9%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "ENVALIOR INDIA PRIVATE LIMITED",
+    "excelRow": 28,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Not Applicable",
+        "script": "NA",
+        "replacementPeriod": "Not Applicable",
+        "output": "Error: NA is not defined"
+      }
+    ]
+  },
+  {
+    "clientName": "INTUIT INDIA PRODUCT DEVELOPMENT CENTRE PRIVATE LIMITED",
+    "excelRow": 29,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 7.33% of Annual CTC for Applicant in case the Annual CTC is \"Upto Rs.10,00,000\", 9% in case Annual CTC is between \"Rs.10,00,001 to Rs.25,00,000\", 11.50% of Annual CTC for more than \"Rs.25,00,000\" for applicant souced by off-site recruiter and 3% of Annual CTC for applicant sourced by on-site recruiter, subject to Manpower hitting goals of average 4 sourcing offers per month per sourcer ",
+        "script": "(\r\n  ({Input}.toLowerCase() === \"rpo\" && {BillableCTC} <= 1000000)\r\n    ?  (MarkUp = {BillableCTC} * 0.0733,ExecutedServiceTerms = \"7.33%\")\r\n  : ({Input}.toLowerCase() === \"rpo\" && {BillableCTC} >= 1000001 && {BillableCTC} <= 2500000)\r\n    ?  (MarkUp = {BillableCTC} * 0.09,ExecutedServiceTerms = \"9%\")\r\n  : ({Input}.toLowerCase() === \"rpo\" && {BillableCTC} > 2500000)\r\n    ?  (MarkUp = {BillableCTC} * 0.115,ExecutedServiceTerms = \"11.50%\")\r\n  : ({Input}.toLowerCase() === \"perm\")\r\n    ?  (MarkUp = {BillableCTC} * 0.03,ExecutedServiceTerms = \"3%\")\r\n  : 0\r\n); ReplacementPeriod = 90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "rpo": {
+            "MarkUp": 73300,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "7.33%"
+          },
+          "perm": {
+            "MarkUp": 30000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "3%"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "Multivac Technology Solutions India Private Limited",
+    "excelRow": 30,
+    "results": []
+  },
+  {
+    "clientName": "JSW ENERGY LIMITED",
+    "excelRow": 31,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is Rs. 31,000 for \"Band L4, L5, L6 & L7\", Rs.51,000 for \"Band L8,L9 & L10\", Rs.91,000 for \"Band L11, L12 & L13\" [Refer : Monthly Management Fee, Special Conditions & Remarks]",
+        "script": "(({Input}.toLowerCase() === 'bandl4' || {Input}.toLowerCase() === 'bandl5' || {Input}.toLowerCase() === 'bandl6' || {Input}.toLowerCase() === 'bandl7') ?  (MarkUp = 31000,ExecutedServiceTerms = \"31000\") : ({Input}.toLowerCase() === 'bandl8' || {Input}.toLowerCase() === 'bandl9' || {Input}.toLowerCase() === 'bandl10') ?  (MarkUp = 51000,ExecutedServiceTerms = \"51000\") : ({Input}.toLowerCase() === 'bandl11' || {Input}.toLowerCase() === 'bandl12' || {Input}.toLowerCase() === 'bandl13') ?  (MarkUp = 91000,ExecutedServiceTerms = \"91000\") : 0); ReplacementPeriod =  60",
+        "replacementPeriod": "Replacement Period is 60 Days",
+        "output": {
+          "bandl4": {
+            "MarkUp": 31000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "31000"
+          },
+          "bandl5": {
+            "MarkUp": 31000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "31000"
+          },
+          "bandl6": {
+            "MarkUp": 31000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "31000"
+          },
+          "bandl7": {
+            "MarkUp": 31000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "31000"
+          },
+          "bandl8": {
+            "MarkUp": 51000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "51000"
+          },
+          "bandl9": {
+            "MarkUp": 51000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "51000"
+          },
+          "bandl10": {
+            "MarkUp": 51000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "51000"
+          },
+          "bandl11": {
+            "MarkUp": 91000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "91000"
+          },
+          "bandl12": {
+            "MarkUp": 91000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "91000"
+          },
+          "bandl13": {
+            "MarkUp": 91000,
+            "ReplacementPeriod": 60,
+            "ExecutedServiceTerms": "91000"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "Toyota Financial Services India Limited",
+    "excelRow": 32,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 5.5% of Annual Offered CTC (excluding variable bonus, medical benefits and gratuity)",
+        "script": "MarkUp = {BillableCTC} * 0.055; ExecutedServiceTerms = \"5.5%\";ReplacementPeriod = {BillableCTC} <= 1000000 ? 60 : 90  ",
+        "replacementPeriod": "Replacement Period is 60 Days in case the Annual Offered CTC is \"Upto Rs.10,00,000\", 90 Days if  the Annucal Offered CTC is more than \"Rs.10,00,000\"",
+        "output": {
+          "MarkUp": 55000,
+          "ReplacementPeriod": 60,
+          "ExecutedServiceTerms": "5.5%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "CORPORATER ASIA TECHNOLOGIES PRIVATE LIMITED",
+    "excelRow": 33,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 8.33% of Annual Offered CTC",
+        "script": "MarkUp = {BillableCTC} * 0.0833; ExecutedServiceTerms = \"8.33%\"; ReplacementPeriod =  50",
+        "replacementPeriod": "Replacement Period is 50 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 50,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "KRONES DIGITAL SOLUTIONS INDIA PRIVATE LIMITED",
+    "excelRow": 34,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 8.33% of Annual Base Pay, includes all fixed salary components excluding the retrirals benefit and bonus",
+        "script": "MarkUp = {BillableCTC} * 0.0833; ExecutedServiceTerms = \"8.33%\"; ReplacementPeriod = 90",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 90,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "FRESHTOHOME FOODS PRIVATE LIMITED",
+    "excelRow": 35,
+    "results": []
+  },
+  {
+    "clientName": "BHARAT INNOVATIVE GLASS TECHNOLOGIES PRIVATE LIMITED",
+    "excelRow": 36,
+    "results": []
+  },
+  {
+    "clientName": "NEW TRENDS COMMERCE PRIVATE LIMITED",
+    "excelRow": 37,
+    "results": []
+  },
+  {
+    "clientName": "PITTI ENGINEERING LIMITED",
+    "excelRow": 38,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 8.33% of Annual CTC for Applicant in case the Annual CTC is \"Upto Rs.15,00,000\", 9.5% in case Annual CTC is between \"Rs.15,00,001 to Rs.25,00,000\", 12% of Annual CTC for more than \"Rs.25,00,000\"",
+        "script": "({BillableCTC} <= 1500000 ? (MarkUp ={BillableCTC} * 0.0833,ExecutedServiceTerms = \"8.33%\") : ({BillableCTC} >= 1500001 && {BillableCTC} <= 2500000 ? (MarkUp ={BillableCTC} * 0.095,ExecutedServiceTerms = \"9.5%\") : (MarkUp ={BillableCTC} * 0.12,ExecutedServiceTerms = \"12%\")));ReplacementPeriod = {BillableCTC} <= 1500000 ?  45   :  {BillableCTC} <= 2500000 ?  60   :  90",
+        "replacementPeriod": "Replacement Period is 45 Days in case the Annual CTC is \"Upto Rs.15,00,000\", 60 Days in case Annual CTC is between \"Rs15,00,001 to Rs. 25,00,000\", 90 Days if the Annucal CTC is more than \"Rs.25,00,000\"",
+        "output": {
+          "MarkUp": 83300,
+          "ReplacementPeriod": 45,
+          "ExecutedServiceTerms": "8.33%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "DIPTAB VENTURES PRIVATE LIMITED",
+    "excelRow": 39,
+    "results": []
+  },
+  {
+    "clientName": "CERENCE SERVICES (INDIA) LLP",
+    "excelRow": 40,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markeup Amount is 6.25% of Annualized Base Salary [Refer : Monthly Management Fee]",
+        "script": "MarkUp = {BillableCTC} * 0.0625; ExecutedServiceTerms = \"6.25%\"; ReplacementPeriod =  60",
+        "replacementPeriod": "Replacement Period is 60 Days",
+        "output": {
+          "MarkUp": 62500,
+          "ReplacementPeriod": 60,
+          "ExecutedServiceTerms": "6.25%"
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "Altus Group (India) Private Limited",
+    "excelRow": 41,
+    "results": [
+      {
+        "service": "perm",
+        "terms": "Markup Amount is 5.5% of Billable CTC for Applicant in case of \"GSC Role\", 6% if \"Non GSC Role\", 2% of Billable CTC if Applicate is \"Referrel\"   //6.5%  of Billable CTC for \"Female\" Applicant for \"R&D Role\"",
+        "script": "   (\r\n  {Input}.toLowerCase() === \"gsc\"\r\n    ? (MarkUp ={BillableCTC} * 0.055,ExecutedServiceTerms = \"5.5%\")\r\n  : {Input}.toLowerCase() === \"nongsc\"\r\n    ? (MarkUp ={BillableCTC} * 0.06,ExecutedServiceTerms = \"6%\")\r\n : {Input}.toLowerCase() === \"r&df\"\r\n    ? (MarkUp ={BillableCTC} * 0.065,ExecutedServiceTerms = \"6.5%\")\r\n  : {Input}.toLowerCase() === \"referral\"\r\n    ? (MarkUp ={BillableCTC} * 0.02,ExecutedServiceTerms = \"2%\")\r\n  : 0\r\n); ReplacementPeriod =  90 ",
+        "replacementPeriod": "Replacement Period is 90 Days",
+        "output": {
+          "gsc": {
+            "MarkUp": 55000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "5.5%"
+          },
+          "nongsc": {
+            "MarkUp": 60000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "6%"
+          },
+          "r&df": {
+            "MarkUp": 65000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "6.5%"
+          },
+          "referral": {
+            "MarkUp": 20000,
+            "ReplacementPeriod": 90,
+            "ExecutedServiceTerms": "2%"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "clientName": "KOCHE INTERNATIONAL PRIVATE LIMITED",
+    "excelRow": 42,
+    "results": []
+  },
+  {
+    "clientName": "FLSmidth A/S",
+    "excelRow": 43,
+    "results": []
+  }
+]
